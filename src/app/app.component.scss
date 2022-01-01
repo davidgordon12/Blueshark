@@ -1,0 +1,17 @@
+mat-toolbar {
+    background: rgb(51, 110, 187);
+}
+
+mat-sidenav-container {
+    height: 100%;
+    background: rgb(194, 222, 247);
+    mat-sidenav {
+        height: 100%;
+        background: rgb(51, 110, 187)
+    }
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}

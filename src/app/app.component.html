@@ -1,0 +1,19 @@
+<mat-toolbar>
+  <button (click)="sidenav.toggle() " mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>{{ title }}</span>
+</mat-toolbar>
+
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #sidenav mode="side" opened><mat-list role="list">
+    <mat-list-item role="listitem"><mat-icon>home</mat-icon><a routerLink="grocerylist">Create Listing</a></mat-list-item>
+    <mat-list-item role="listitem"><mat-icon>shopping_cart</mat-icon><a routerLink="purchasehistory">Listings</a></mat-list-item>
+    <mat-list-item role="listitem"><mat-icon>info</mat-icon><a routerLink="about">About</a></mat-list-item>
+  </mat-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+    <router-outlet (activate)="changeTitle($event.pageTitle)"></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

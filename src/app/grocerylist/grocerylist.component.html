@@ -1,0 +1,20 @@
+<form [formGroup]="ctrlGroup" (ngSubmit)="onSubmit($event)">
+    <mat-form-field appearance="fill">
+      <mat-label>Sq-Ft</mat-label>
+      <mat-select [formControl]="quantityCtrl">
+        <mat-option value="1000 sq-ft">1000</mat-option>
+        <mat-option value="1000+ sq-ft">1000+</mat-option>
+        <mat-option value="2000+ sq-ft">2000+</mat-option>
+        <mat-option value="3000+ sq-ft">3000+</mat-option>
+      </mat-select>
+      <mat-error *ngIf="quantityCtrl.hasError('required')">Square Footage is required.</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Address</mat-label>
+      <input [formControl]="itemCtrl" matInput>
+    </mat-form-field>
+    <button type="submit" mat-raised-button>Post</button>
+  </form>
+  <p *ngFor="let item of datastore.getCart(); let i = index" (click)="onItemClick(i)">
+    {{ item }} 
+</p>
